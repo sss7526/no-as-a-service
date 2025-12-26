@@ -128,22 +128,24 @@ If you open this repo in Github Codespaces, it will automatically use `.devconta
 
 Here are some projects and websites that creatively integrate [no-as-a-service](https://naas.isalman.dev/no) to deliver humorous or programmatic "no" responses:
 
-1. **[no-as-a-service-rust](https://github.com/ZAZPRO/no-as-a-service-rust)**  
+1. **[Golang](https://github.com/sss7526/no-as-a-service/tree/pl/go)** implementation of this project. With support for `Accept` http request headers to respond in json, xml, text/html, or text/plain.
+
+2. **[no-as-a-service-rust](https://github.com/ZAZPRO/no-as-a-service-rust)**  
    Rust implementation of this project.
 
-2. **[CSG Admins](https://csg-admins.de)**  
+3. **[CSG Admins](https://csg-admins.de)**  
    A system administration and gaming service hub using no-as-a-service to provide playful negative responses across some admin panels and commands.
 
-3. **[FunnyAnswers - /no endpoint](https://www.funnyanswers.lol/no)**  
+4. **[FunnyAnswers - /no endpoint](https://www.funnyanswers.lol/no)**  
    A humor-focused API playground that includes a mirror or wrapper for no-as-a-service, perfect for developers exploring fun HTTP-based responses.
 
-4. **[Gerador de Frases Aleatórias (pt-BR)](https://github.com/timeuz/frases-aleatorias)**
+5. **[Gerador de Frases Aleatórias (pt-BR)](https://github.com/timeuz/frases-aleatorias)**
    Uma reinterpretação em Python com frases em português, frontend e novas categorias.
 
-5. **[NoAsAnApp](https://github.com/omar-jarid/NoAsAnApp)**  
+6. **[NoAsAnApp](https://github.com/omar-jarid/NoAsAnApp)**  
    A simple native Android app calling no-as-a-service to provide negative responses.
 
-6. **[Your Project Here?](https://github.com/YOUR_REPO)**  
+7. **[Your Project Here?](https://github.com/YOUR_REPO)**  
    If you're using no-as-a-service in your project, open a pull request to be featured here!
 
 ---
