@@ -1,16 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"sync"
 	"time"
-	"fmt"
 )
 
 // Rate limiter definition
 type RateLimiter struct {
 	visitors map[string]time.Time
-	mu sync.Mutex
+	mu       sync.Mutex
 }
 
 func NewRateLimiter() *RateLimiter {
