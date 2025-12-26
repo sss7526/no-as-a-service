@@ -8,7 +8,6 @@ import (
     "log"
     "math/rand"
     "net/http"
-    "strings"
     "time"
 
     "github.com/timewasted/go-accept-headers"
@@ -61,19 +60,38 @@ func rejectionHandler(w http.ResponseWriter, r * http.Request) {
     // Pick a random rejection reason
     reason := reasons[rand.Intn(len(reasons))]
 
+    // Supported content types
+    supportedTypes := []string{
+        "application/json",
+        "text/plain",
+        "text/html",
+        "application/xml",
+    }
+
     // Handle the Accept header
     acceptHeader := r.Header.Get("Accept")
     fmt.Println(acceptHeader)
-    switch {
-    case strings.Contains(acceptHeader, "application/json") || acceptHeader == "":
+
+    // Negotiate the best match using go-accept-headers
+    bestMatch, err := accept.Negotiate(acceptHeader, supportedTypes...)
+    if err != nil {
+        // If no suitable match, return 406 Not Acceptable
+        w.Header().Set("Content-Type", "application/json")
+        w.WriteHeader(http.StatusNotAcceptable)
+        json.NewEncoder(w).Encode(map[string]string{"reason": reason})
+        return
+    }
+
+    switch bestMatch {
+    case "application/json":
         w.Header().Set("Content-Type", "application/json")
         _ = json.NewEncoder(w).Encode(map[string]string{"reason": reason})
     
-    case strings.Contains(acceptHeader, "text/plain") || strings.Contains(acceptHeader, "text/html"):
-        w.Header().Set("Content-Type", "text/plain")
+    case "text/plain", "text/html":
+        w.Header().Set("Content-Type", bestMatch)
         w.Write([]byte(reason))
 
-    case strings.Contains(acceptHeader, "application/xml"):
+    case "application/xml":
         w.Header().Set("Content-Type", "application/xml")
         xmlResponse := struct {
             XMLName xml.Name `xml:"Response"`
