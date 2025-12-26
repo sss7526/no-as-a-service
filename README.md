@@ -11,6 +11,8 @@ Built for humans, excuses, and humor.
 
 This `main` serves as a reference to different implementations of "No as a Service" (NaaS) in various programming languages. Each language implementation is maintained on its own branch at `pl/<lang>`. 
 
+- [Golang](https://github.com/sss7526/no-as-a-service/tree/pl/go)
+
 - [Javascript](https://github.com/sss7526/no-as-a-service/tree/pl/js) forked from [hotheadhacker](https://github.com/hotheadhacker/no-as-a-service)
 
 - [Rust](https://github.com/sss7526/no-as-a-service/tree/pl/rust) forked from [ZAZPRO](https://github.com/ZAZPRO/no-as-a-service-rust) 
@@ -40,7 +42,7 @@ Original [JS implementation](https://github.com/hotheadhacker/no-as-a-service) c
 
 Original [rust port](https://github.com/ZAZPRO/no-as-a-service-rust) by [ZAZPRO](https://github.com/ZAZPRO)
 
-Ported to <[TBD]()> by [sss7526](https://github.com/sss7526)
+Ported to [Go](https://github.com/sss7526/no-as-a-service/tree/pl/go) by [sss7526](https://github.com/sss7526)
 
 ---
 
