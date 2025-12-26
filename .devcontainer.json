@@ -1,5 +1,5 @@
 {
-  "image": "docker.io/node:22-alpine",
+  "image": "docker.io/golang:1.25-alpine",
   "mounts": [
     "type=bind,source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/root/.ssh"
   ],
@@ -16,6 +16,5 @@
   "forwardPorts": [3000],
   "shutdownAction": "stopContainer",
   "containerEnv": {
-    "NODE_ENV": "development"
   }
 }
