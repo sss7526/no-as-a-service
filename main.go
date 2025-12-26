@@ -10,6 +10,8 @@ import (
     "net/http"
     "strings"
     "time"
+
+    "github.com/timewasted/go-accept-headers"
 )
 
 // Global variable to store rejection reasons
@@ -20,9 +22,6 @@ func main() {
     if err := loadRejectionReasons("reasons.json"); err != nil {
         log.Fatalf("Failed to load reasons file: %v", err)
     }
-
-    // Seed the random number generator
-    rand.Seed(time.Now().UnixNano())
 
     // Create a new HTTP  server with a custom handler
     mux := http.NewServeMux()
